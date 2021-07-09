@@ -20,7 +20,7 @@ RUN \
   && pip install awscli --upgrade \
   && curl https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_$TERRAFORM_VERSION_linux_amd64.zip \
        -o /usr/local/bin/terraform \
-  && chmod +x /usr/local/terraform \
+  && chmod +x /usr/local/bin/terraform \
   && curl https://releases.hashicorp.com/packer/$PACKER_VERSION/packer_$PACKER_VERSION_linux_amd64.zip \
        -o /usr/local/bin/packer \
   && chmod +x /usr/local/bin/packer

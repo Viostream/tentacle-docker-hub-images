@@ -7,6 +7,9 @@ ENV ACCEPT_EULA=Y
 ENV PACKER_VERSION=1.7.3
 ENV TERRAFORM_VERSION=1.0.1
 
+# Add in github.com public key
+COPY known_hosts /root/.ssh/known_hosts
+
 RUN \
      apt-get update \
   && apt-get upgrade -y \
@@ -30,5 +33,4 @@ RUN \
   && unzip packer.zip \
   && mv packer /usr/local/bin/packer \
   && chmod +x /usr/local/bin/packer \
-  && rm packer.zip \
-
+  && rm packer.zip

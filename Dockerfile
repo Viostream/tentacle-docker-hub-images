@@ -17,7 +17,14 @@ RUN \
        git \
        groff \
        python3-distutils \
+       wget \
        zip \
+  && apt-get remove -y jq \
+  && echo "deb [arch=amd64] https://deb.debian.org/debian bullseye main" > /etc/apt/sources.list.d/bullseye.list \
+  && apt-get update \
+  && apt-get install -y \
+       jq \
+       skopeo \
   && rm -rf /var/lib/apt/lists/* \
   && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
   && python3 get-pip.py \

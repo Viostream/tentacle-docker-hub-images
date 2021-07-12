@@ -11,20 +11,20 @@ ENV TERRAFORM_VERSION=1.0.1
 COPY known_hosts /root/.ssh/known_hosts
 
 RUN \
-     apt-get update \
+     curl -sSfL https://apt.octopus.com/public.key | apt-key add - \
+     && echo deb https://apt.octopus.com/ stable main > /etc/apt/sources.list.d/octopus.com.list \
+     && echo deb [arch=amd64] https://deb.debian.org/debian bullseye main > /etc/apt/sources.list.d/bullseye.list \
+     && apt-get update \
   && apt-get upgrade -y \
   && apt-get install -y \
        git \
        groff \
+       jq \
+       octopuscli \
        python3-distutils \
+       skopeo \
        wget \
        zip \
-  && apt-get remove -y jq \
-  && echo "deb [arch=amd64] https://deb.debian.org/debian bullseye main" > /etc/apt/sources.list.d/bullseye.list \
-  && apt-get update \
-  && apt-get install -y \
-       jq \
-       skopeo \
   && rm -rf /var/lib/apt/lists/* \
   && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
   && python3 get-pip.py \

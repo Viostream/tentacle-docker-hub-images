@@ -5,6 +5,7 @@ This adds some handy tools to the tentacle container:
 * aws-cli
 * git
 * jq 1.6
+* octopuscli
 * terraform
 * packer
 * skopeo

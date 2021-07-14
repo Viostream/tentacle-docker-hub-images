@@ -5,6 +5,7 @@ LABEL Maintainer='Stuart Auld <stuart.auld@viostream.com>'
 # This is required for the tentacle to run
 ENV ACCEPT_EULA=Y
 ENV PACKER_VERSION=1.7.3
+ENV SNOWFLAKE_DRIVER_VERSION=2.23.2
 ENV TERRAFORM_VERSION=1.0.1
 
 # Add in github.com public key
@@ -24,6 +25,7 @@ RUN \
        python3-distutils \
        skopeo \
        wget \
+       unixodbc \
        zip \
   && rm -rf /var/lib/apt/lists/* \
   && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
@@ -40,4 +42,7 @@ RUN \
   && unzip packer.zip \
   && mv packer /usr/local/bin/packer \
   && chmod +x /usr/local/bin/packer \
-  && rm packer.zip
+  && rm packer.zip \
+  && wget -q "https://sfc-repo.snowflakecomputing.com/odbc/linux/latest/snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
+  && dpkg -i "snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
+  && rm "snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb"

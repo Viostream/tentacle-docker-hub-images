@@ -9,6 +9,7 @@ This adds some handy tools to the tentacle container:
 * terraform
 * packer
 * skopeo
+* snowflake ODBC driver
 * zip
 
 Commits to the main branch will be built on

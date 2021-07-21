@@ -6,7 +6,7 @@ LABEL Maintainer='Stuart Auld <stuart.auld@viostream.com>'
 ENV ACCEPT_EULA=Y
 ENV PACKER_VERSION=1.7.3
 ENV SNOWFLAKE_DRIVER_VERSION=2.23.2
-ENV TERRAFORM_VERSION=1.0.1
+ENV TERRAFORM_VERSION=1.0.2
 
 # Add in github.com public key
 COPY known_hosts /root/.ssh/known_hosts

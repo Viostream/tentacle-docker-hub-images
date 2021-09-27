@@ -4,6 +4,7 @@ LABEL Maintainer='Stuart Auld <stuart.auld@viostream.com>'
 
 # This is required for the tentacle to run
 ENV ACCEPT_EULA=Y
+ENV CHAMBER_VERSION=2.10.3
 ENV PACKER_VERSION=1.7.3
 ENV SNOWFLAKE_DRIVER_VERSION=2.23.2
 ENV TERRAFORM_VERSION=1.0.2
@@ -45,4 +46,8 @@ RUN \
   && rm packer.zip \
   && wget -q "https://sfc-repo.snowflakecomputing.com/odbc/linux/latest/snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
   && dpkg -i "snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
-  && rm "snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb"
+  && rm "snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
+  && wget "https://github.com/segmentio/chamber/releases/download/v$CHAMBER_VERSION/chamber-v$CHAMBER_VERSION-linux-amd64" \
+       -O chamber \
+  && chmod +x chamber \
+  && mv chamber /usr/local/bin/

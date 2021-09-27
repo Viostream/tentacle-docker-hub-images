@@ -47,7 +47,7 @@ RUN \
   && wget -q "https://sfc-repo.snowflakecomputing.com/odbc/linux/latest/snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
   && dpkg -i "snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
   && rm "snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
-  && wget "https://github.com/segmentio/chamber/releases/download/v$CHAMBER_VERSION/chamber-v$CHAMBER_VERSION-linux-amd64" \
+  && wget -q "https://github.com/segmentio/chamber/releases/download/v$CHAMBER_VERSION/chamber-v$CHAMBER_VERSION-linux-amd64" \
        -O chamber \
   && chmod +x chamber \
   && mv chamber /usr/local/bin/

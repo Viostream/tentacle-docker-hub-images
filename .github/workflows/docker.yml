@@ -28,9 +28,9 @@ jobs:
         CUSTOM_TAG: ${{ steps.custom_tag.outputs.custom_tag }}
     - name: Login to Docker Hub
       uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Push to Docker Hub
       run: |
         docker tag ${{ github.sha }} viostream/tentacle:${{ steps.custom_tag.outputs.custom_tag }}

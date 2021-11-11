@@ -4,6 +4,7 @@ This adds some handy tools to the tentacle container:
 
 * aws-cli
 * chamber
+* fusion-theme-sync
 * git
 * jq 1.6
 * octopuscli

@@ -5,10 +5,9 @@ LABEL Maintainer='Stuart Auld <stuart.auld@viostream.com>'
 # This is required for the tentacle to run
 ENV ACCEPT_EULA=Y
 ENV CHAMBER_VERSION=2.10.12
-ENV FUSION_THEME_SYNC_VERSION=0.2.1
-ENV PACKER_VERSION=1.8.3
-ENV SNOWFLAKE_DRIVER_VERSION=2.25.5
-ENV TERRAFORM_VERSION=1.3.0
+ENV PACKER_VERSION=1.8.4
+ENV SNOWFLAKE_DRIVER_VERSION=2.25.7
+ENV TERRAFORM_VERSION=1.3.6
 
 # Add in github.com public key
 COPY known_hosts /root/.ssh/known_hosts
@@ -51,7 +50,4 @@ RUN \
      && wget -q "https://github.com/segmentio/chamber/releases/download/v$CHAMBER_VERSION/chamber-v$CHAMBER_VERSION-linux-amd64" \
      -O chamber \
      && chmod +x chamber \
-     && mv chamber /usr/local/bin/ \
-     && wget -q "https://github.com/Viostream/fusion-theme-sync/releases/download/v$FUSION_THEME_SYNC_VERSION/fusion-theme-sync" \
-     && mv fusion-theme-sync /usr/local/bin/ \
-     && chmod +x /usr/local/bin/fusion-theme-sync
+     && mv chamber /usr/local/bin/

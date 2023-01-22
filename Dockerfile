@@ -4,10 +4,10 @@ LABEL Maintainer='Stuart Auld <stuart.auld@viostream.com>'
 
 # This is required for the tentacle to run
 ENV ACCEPT_EULA=Y
-ENV CHAMBER_VERSION=2.10.12
-ENV PACKER_VERSION=1.8.4
+ENV CHAMBER_VERSION=2.11.1
+ENV PACKER_VERSION=1.8.5
 ENV SNOWFLAKE_DRIVER_VERSION=2.25.7
-ENV TERRAFORM_VERSION=1.3.6
+ENV TERRAFORM_VERSION=1.3.7
 
 # Add in github.com public key
 COPY known_hosts /root/.ssh/known_hosts

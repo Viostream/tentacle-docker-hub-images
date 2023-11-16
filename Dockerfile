@@ -4,9 +4,9 @@ LABEL Maintainer='Stuart Auld <stuart.auld@viostream.com>'
 
 # This is required for the tentacle to run
 ENV ACCEPT_EULA=Y
-ENV CHAMBER_VERSION=2.25.12
+ENV CHAMBER_VERSION=2.13.4
 ENV PACKER_VERSION=1.9.4
-ENV SNOWFLAKE_DRIVER_VERSION=2.25.7
+ENV SNOWFLAKE_DRIVER_VERSION=2.25.12
 ENV TERRAFORM_VERSION=1.6.4
 
 # Add in github.com public key

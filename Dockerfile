@@ -37,6 +37,7 @@ RUN \
      && unzip terraform.zip \
      && mv terraform /usr/local/bin/terraform \
      && chmod +x /usr/local/bin/terraform \
+     && rm LICENSE.txt \
      && rm terraform.zip \
      && curl https://releases.hashicorp.com/packer/"$PACKER_VERSION"/packer_"$PACKER_VERSION"_linux_amd64.zip \
      -o packer.zip \
@@ -44,6 +45,7 @@ RUN \
      && mv packer /usr/local/bin/packer \
      && chmod +x /usr/local/bin/packer \
      && rm packer.zip \
+     && rm LICENSE.txt \
      && wget -q "https://sfc-repo.snowflakecomputing.com/odbc/linux/latest/snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
      && dpkg -i "snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
      && rm "snowflake-odbc-${SNOWFLAKE_DRIVER_VERSION}.x86_64.deb" \
